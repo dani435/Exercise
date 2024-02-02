@@ -72,9 +72,9 @@ void list_remove(Node **head, int num)
     return;
 }
 
-void list_reverse(Node **head)
+void list_reverse(Node *head)
 {
-    Node *current_node = *head;
+    Node *current_node = head;
     Node *prev_node = NULL;
     Node *next_node = NULL;
     while (current_node != NULL)
@@ -84,7 +84,7 @@ void list_reverse(Node **head)
         prev_node = current_node;
         current_node = next_node;
     }
-    *head = prev_node;   
+    head = prev_node;   
 }
 
 void create_node(Node **head, int num)
@@ -144,7 +144,7 @@ int main()
     
                 case 3:
                     printf("\nReverse list: ");
-                    list_reverse(&head);
+                    list_reverse(head);
                     list_print(&head);
     
                     break;

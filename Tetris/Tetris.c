@@ -392,6 +392,7 @@ void DeleteLines(int startOffsetX, int startOffsetY)
         //increase the score
         score += (scoreLines * count);
     }
+    UnloadSound(lineClearMusic);
 }
 
 int main(int argc, char **argv, char **environ)
