@@ -302,7 +302,7 @@ void DeleteLines(int startOffsetX, int startOffsetY)
 {
     //sound when a line is completed
     Sound lineClearMusic = LoadSound("./tetrisLineClearSound.wav");
-    SetSoundVolume(lineClearMusic, 0.1f);
+    SetSoundVolume(lineClearMusic, 0.05f);
 
     //variables for multiple lines
     int count = 0;
@@ -431,13 +431,13 @@ int main(int argc, char **argv, char **environ)
     int nextTetromino = GetRandomValue(0, 6);
     int currentRotation = 0;
 
-    //Tetromino movement time
-    float moveTetrominoDownTimer = 1.f;
-    float timeToMoveTetrominoDown = moveTetrominoDownTimer;
-
     //Tetromino random color
     int currentColor = GetRandomValue(1, 6);
     int nextColor = GetRandomValue(1, 6);
+
+    //Tetromino movement time
+    float moveTetrominoDownTimer = 1.f;
+    float timeToMoveTetrominoDown = moveTetrominoDownTimer;
 
     TraceLog(LOG_INFO, "Number of arguments : %d", argc);
 
@@ -458,7 +458,7 @@ int main(int argc, char **argv, char **environ)
     // Sound
     InitAudioDevice();
     Sound backgroundMusic = LoadSound("./Tetris.wav");
-    SetSoundVolume(backgroundMusic, 0.1f);
+    SetSoundVolume(backgroundMusic, 0.05f);
 
     SetTargetFPS(60);
 
@@ -549,7 +549,7 @@ int main(int argc, char **argv, char **environ)
                 {
                     currentTetrominoY++;
                 }
-                timeToMoveTetrominoDown = moveTetrominoDownTimer;
+                timeToMoveTetrominoDown = 0;
             }
 
             //directly move tetromino down by one

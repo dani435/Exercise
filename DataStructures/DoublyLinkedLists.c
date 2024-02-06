@@ -115,16 +115,7 @@ void list_print(Node **head)
     printf("\n");
 }
 
-// void list_printcount(Node **head)
-// {
-//     Node *current_node = *head;
-//     while (current_node != NULL)
-//     {
-//         printf("%d ", current_node->count);
-//         current_node = current_node->next;
-//     }
-// }
-
+//item = elemento al quale vogliamo aggiungere dopo, num = elemento che vogliamo aggiungere
 void list_append_After (Node **head, int item, int num)
 {
     Node *node = (Node *)malloc(sizeof(Node));
@@ -160,6 +151,7 @@ void list_append_After (Node **head, int item, int num)
 
 }
 
+//item = elemento al quale vogliamo aggiungere prima, num = elemento che vogliamo aggiungere
 void list_append_Before (Node **head, int item, int num)
 {
     Node *node = (Node *)malloc(sizeof(Node));
@@ -179,8 +171,7 @@ void list_append_Before (Node **head, int item, int num)
     }
 
     while (current_node != NULL && current_node->data != item)
-    {
-        prev_node = current_node;
+    {     
         current_node = current_node->next;
     }
     if (current_node == NULL)
@@ -188,6 +179,7 @@ void list_append_Before (Node **head, int item, int num)
         printf("\n element not found");
         return;
     }
+    prev_node = current_node->prev;
     current_node->prev = node;
     node->next = current_node;
     prev_node->next = node;
