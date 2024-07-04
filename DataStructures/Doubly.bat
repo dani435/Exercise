@@ -1,1 +1,0 @@
-clang.exe -o DoublyLinkedLists.exe DoublyLinkedLists.c -l raylibdll

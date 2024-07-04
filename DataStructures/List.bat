@@ -1,1 +1,0 @@
-clang.exe -o list.exe list.c -l raylibdll 
